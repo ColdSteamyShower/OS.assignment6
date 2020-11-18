@@ -24,7 +24,7 @@ Use & and a mask to only save the last 8 bits
 // returns the page number of an address
 unsigned getPage(unsigned address)
 {
-  return (address >> OFFSET_CHUNK)&MASK; // move over the page number bits then mask to get the last 8 bits
+  return (address >> OFFSET_CHUNK)&MASK; // move over the page number bits to front then mask to get the last 8 bits
 }
 
 // returns the offset of an address
