@@ -125,11 +125,11 @@ CPSC 380-01
     // to console
     printf("\33[32mVirtual Memory Simulation Complete\n");
     printf("\33[32mAddresses Read: \33[33m%d\n", addressReads);
-    printf("\33[32mTLB Hits: \33[33m%d/%d (%f\%)\n", tlbHits, addressReads, (tlbHits/(float)addressReads));
-    printf("\33[32mPage Faults: \33[33m%d/%d (%f\%)\33[0m\n", pageFaults, addressReads, (pageFaults/(float)addressReads));
+    printf("\33[32mTLB Hits: \33[33m%d/%d (%f\%)\n", tlbHits, addressReads, (100 * tlbHits/(float)addressReads));
+    printf("\33[32mPage Faults: \33[33m%d/%d (%f\%)\33[0m\n", pageFaults, addressReads, (100 * pageFaults/(float)addressReads));
 
     // to report file
-    fprintf(output, "\nVirtual Memory Simulation Complete\n Addresses Read: %d\n TLB Hits: %d/%d (%f\%)\n Page Faults: %d/%d (%f\%)\n", addressReads, tlbHits, addressReads, (tlbHits/(float)addressReads), pageFaults, addressReads, (pageFaults/(float)addressReads));
+    fprintf(output, "\nVirtual Memory Simulation Complete\n Addresses Read: %d\n TLB Hits: %d/%d (%f\%)\n Page Faults: %d/%d (%f\%)\n", addressReads, tlbHits, addressReads, (100 *tlbHits/(float)addressReads), pageFaults, addressReads, (100 * pageFaults/(float)addressReads));
 
     // cleanup
     fclose(backingStore);
